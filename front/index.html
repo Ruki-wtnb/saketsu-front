@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本酒-通-</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- TODO アイコン実装 -->
+    <div id="app">
+        <section v-masonry="'conteinerId'" item-selector=".item" class="lists">
+            <header class="header item">
+                <div class="border-radius">日本酒-通-</div>
+                <nav class="nav">
+                    <ul class="menu">
+                        <!-- TODO 日本酒について -->
+                        <!-- TODO グラフ表示 -->
+                        <!-- TODO データ登録・修正ページ -->
+                        <li class="nav-item"><a href="./login.html">ログイン</a></li>
+                        <li class="nav-item"><a href="#">Coming Soon</a></li>
+                        <li class="nav-item"><a href="#">Coming Soon</a></li>
+                    </ul>
+                </nav>
+                <div class="search-box">
+                    <input type="search" v-model="meigara" placeholder="銘柄検索" class="search-name">
+                    <select v-model="prefecture" class="select-box">
+                        <option value="">都道府県選択</option>
+                        <option v-for="pref in prefectures">
+                            {{ pref }}
+                        </option>
+                    </select>
+                    <select v-model="sort" class="select-box">
+                        <option value="">並び順選択</option>
+                        <option v-for="content in sortContents" v-bind:value="content.value">
+                            {{ content.name }}
+                        </option>
+                    </select>
+                    <button type="button" v-on:click="reMounted()" class="search-button button">検索</button>
+                </div>
+            </header>
+            <section v-masonry-tile class="item" v-for="sake in sakes">
+                <a v-bind:href="sake.affiliate_url" target="_blank" rel="noreferrer noopener">
+                    <template v-if="sake.image_url">
+                        <img class="image" v-bind:src="sake.image_url" alt="日本酒">
+                    </template>
+                    <template v-else>
+                        <img class="image" src="./images/NoImage.png" alt="日本酒">
+                    </template>
+                    <div class="sake-name">
+                        {{ sake.name }}
+                    </div>
+                </a>
+                <table class="description">
+                    <tbody>
+                        <tr>
+                            <th>産地</th><td>{{ sake.prefecture }}</td>
+                        </tr>
+                        <tr>
+                            <th>精米歩合</th><td>{{ sake.sake_class }}</td>
+                        </tr>
+                        <tr>
+                            <th>度数</th><td>{{ sake.alcohol_rate }}</td>
+                        </tr>
+                        <tr>
+                            <th>日本酒度</th><td>{{ sake.sake_meter_value }}</td>
+                        </tr>
+                        <tr>
+                            <th>酸度</th><td>{{ sake.amino_acid_content }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+
+        <div class="paging-area">
+            <span class="paging" v-if="isBefore">
+                <button class="button" v-on:click="reMounted(beforeOffset)"> < 前の50件 </button>
+            </span>
+            <span v-for="p in pageNumbers">
+                <span class="paging">
+                    <template v-if="offset == p-1">
+                        <button class="button selected" v-on:click="reMounted(p)">{{ p }}</button>
+                    </template>
+                    <template v-else>
+                        <button class="button" v-on:click="reMounted(p-1)">{{ p }}</button>
+                    </template>
+                </span>
+            </span>
+            <span  v-if="isNext">
+                <button class="button" v-on:click="reMounted(nextOffset)"> 次の50件 > </button>
+            </span>
+        </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-masonry@0.11.8/dist/vue-masonry-plugin-window.js"></script>
+    <script src="js/top.js"></script>
+
+</body>
+</html>

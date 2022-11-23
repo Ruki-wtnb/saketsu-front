@@ -1,0 +1,300 @@
+@charset "UTF-8";
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding: 20px;
+    background-color: #f6f7fb;
+    color: #333;
+    font-size: 1.2rem;
+    font-family: "Hiragino Kaku Gothic ProN",  Meiryo,  sans-serif;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #7c5119;
+    text-decoration: none;
+}
+
+.item {
+    width: 250px;
+    margin-bottom: 4px;
+    margin-right: 4px;
+    padding: 8px;
+    border-bottom: 3px solid #67be8d;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.item .image{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 128px;
+    width: auto;
+}
+
+.item .sake-name {
+    height: 30px;
+    margin: 15px 9px 10px;
+    font-size: 1.5rem;
+    color: #aaa;
+    letter-spacing: 1px;
+    font-family: "Trebuchet MS", "Hiragino Kaku Gothic ProN",  Meiryo,  sans-serif;
+}
+
+.description {
+    margin: 5px auto 5px;
+    border-collapse: separate;
+    border-spacing: 20px 3px;
+    font-size: 1.4rem;
+}
+
+tr {
+    text-align: left;
+}
+
+.item-sake > a {
+    display: block;
+    margin: -8px -8px -11px;
+    padding: 2px 2px 3px;
+    border-radius: inherit;
+    color: #777;
+    transition: all 0.3s;
+}
+
+.item-sake > a:hover {
+    box-shadow: 0 0 6px -1px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+}
+
+.header{
+    height: 554px;
+    padding: 25px 0;
+    border-bottom: none;
+    text-align: center;
+    border-bottom: 5px solid #f6f7fb;
+}
+
+.border-radius {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background-color: #598444;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    font-size: 2.9rem;
+}
+
+.border-radius:hover {
+    background-color: #794628;
+    transition:  3s;
+}
+
+.nav {
+    margin: 30px auto 0px;
+    padding-bottom: 30px;
+    border-bottom: 5px solid #f6f7fb;
+}
+
+.nav-item {
+    margin-top: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.search-box {
+    margin-top: 15px;
+}
+
+.search-name {
+    padding: 6px;
+    border: double 4px #ccc; 
+    border-radius: 4px;
+    font-size: 1.4rem;
+    width: 80%;
+}
+
+.select-box {
+    margin-top: 15px;
+    border: double 4px #ccc; 
+    border-radius: 4px;
+    font-size: 1.4rem;
+    padding: 6px;
+    width: 80%;
+    
+}
+
+.button {
+    margin: 15px auto 5px;
+    background-color: #f6f7fb;
+    border: double 4px #ccc;
+    font-weight: bold;
+}
+
+.search-button {
+    width: 40%;
+    display: block;
+}
+
+.selected {
+    background-color: black;
+    color: #f6f7fb;
+}
+
+.button:hover {
+    background-color: black;
+    color: #f6f7fb;
+    transition: 0.5s;
+}
+
+.paging-area {
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+/* スマホ用レイアウト */
+
+@media (max-width: 800px){
+
+    body {
+        padding: 3%;
+    }
+    
+    .item {
+        width: 49%;
+        margin-bottom: 8px;
+        margin-right: 4px;
+        padding: 4px;
+        border-bottom: 3px solid #67be8d;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    
+    .item .image{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        height: 128px;
+        width: auto;
+    }
+
+    .item .sake-name {
+        height: 30px;
+        margin: 15px 9px 10px;
+        font-size: 1.5rem;
+        color: #aaa;
+        letter-spacing: 1px;
+        font-family: "Trebuchet MS", "Hiragino Kaku Gothic ProN",  Meiryo,  sans-serif;
+    }
+    
+    .description {
+        margin: 5px auto 5px;
+        border-collapse: separate;
+        border-spacing: 15px 3px;
+        font-size: 1.4rem;
+        white-space: nowrap;
+    }
+
+    .item-sake > a {
+        display: block;
+        margin: -8px -8px -11px;
+        padding: 2px 2px 3px;
+        border-radius: inherit;
+        color: #777;
+        transition: all 0.3s;
+    }
+    .item-sake > a:hover {
+        box-shadow: 0 0 6px -1px rgba(0, 0, 0, 0.3);
+        opacity: 0.8;
+    }
+
+    .header {
+        height: auto;
+    }
+
+    .border-radius {
+        margin: 0 auto;
+        width: 75px;
+        height: 75px;
+        line-height: 75px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    .nav {
+        margin: 20px auto 0px;
+        padding-bottom: 10px;
+        border-bottom: 5px solid #f6f7fb;
+    }
+
+    .menu li {
+        display: inline-block;
+        font-size: 4px;
+        padding: 5px;
+        list-style: none;
+        text-align: center;
+    }
+        
+    .nav-item {
+        margin-top: 10px;
+    }
+    
+    .search-box {
+        margin-top: 15px;
+        width: auto;
+    }
+
+    .search-name {
+        padding: 6px;
+        border: double 4px #ccc; 
+        border-radius: 4px;
+        font-size: 1.4rem;
+        width: 80%;
+    }
+
+    .select-box {
+        margin-top: 15px;
+        border: double 4px #ccc; 
+        border-radius: 4px;
+        font-size: 1.4rem;
+        padding: 6px;
+        width: 80%; 
+    }
+
+    .button {
+        margin: 15px auto 5px;
+        background-color: #f6f7fb;
+        border: double 4px #ccc;
+        font-weight: bold;
+    }
+    
+    .search-button {
+        width: 40%;
+        display: block;
+    }
+    
+    .selected {
+        background-color: black;
+        color: #f6f7fb;
+    }
+    
+    .button:hover {
+    }
+    
+    .paging-area {
+        text-align: center;
+        margin-top: 40px;
+    }
+    
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本酒-通-</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-form">
+        <div id="app">
+            <div class="login-text">ログイン</div>
+            <div class="forms">
+                <input type="search" v-model="username" placeholder="ユーザ名(メールアドレス)" class="input-form">
+                <input type="password" v-model="password" placeholder="パスワード" class="input-form">
+                <div class="login-button">
+                    <button type="button" v-on:click="login()" class="login-button button">ログイン</button>
+                </div>
+            </div>
+            <a href="./index.html">トップページへ戻る</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
