@@ -58,7 +58,8 @@ new Vue({
                 }
             }
             const queryParams = new URLSearchParams(params).toString()
-            const res = await fetch(`https://sake-api.herokuapp.com/sakes?` + queryParams)
+            const res = await fetch('https://saketsu-app.azurewebsites.net/v1/sakes?' + queryParams)
+            //const res = await fetch(`https://sake-api.herokuapp.com/sakes?` + queryParams)
             //const res = await fetch('http://localhost:8000/sakes/?' + queryParams)
             const json = await res.json()
             this.sakes = json.sakes
