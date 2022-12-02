@@ -34,7 +34,6 @@ new Vue({
         const url = 'https://saketsu-app.azurewebsites.net/v1/sakes'
         const res = await fetch(url, {
             method: 'GET', 
-            headers: headers, 
             mode: 'cors',
             credentials: 'include'
         })
