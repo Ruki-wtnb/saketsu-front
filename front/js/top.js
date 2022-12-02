@@ -31,8 +31,14 @@ new Vue({
     },
     // TODO 重複した書き方になっているから、1つに統一したい
     async mounted(){
-        const res = await fetch('https://sake-api.herokuapp.com/sakes')
-        //const res = await fetch('http://localhost:8000/sakes/')
+        const url = 'https://saketsu-app.azurewebsites.net/v1/sakes'
+        const res = await fetch(url, {
+            method: 'GET', 
+            headers: headers, 
+            mode: 'cors',
+            credentials: 'include'
+        })
+        // const res = await fetch('http://localhost:8000/v1/sakes/')
         const json = await res.json()
         this.sakes = json.sakes
         this.isBefore = json.isBefore
@@ -59,8 +65,7 @@ new Vue({
             }
             const queryParams = new URLSearchParams(params).toString()
             const res = await fetch('https://saketsu-app.azurewebsites.net/v1/sakes?' + queryParams)
-            //const res = await fetch(`https://sake-api.herokuapp.com/sakes?` + queryParams)
-            //const res = await fetch('http://localhost:8000/sakes/?' + queryParams)
+            // const res = await fetch('http://localhost:8000/v1/sakes/?' + queryParams)
             const json = await res.json()
             this.sakes = json.sakes
             this.isBefore = json.isBefore
