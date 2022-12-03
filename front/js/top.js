@@ -31,7 +31,7 @@ new Vue({
     },
     // TODO 重複した書き方になっているから、1つに統一したい
     async mounted(){
-        const res = await fetch('https://saketsu-app.azurewebsites.net/v1/sakes')
+        const res = await fetch('https://saketsu-app.azurewebsites.net/v1/sakes', {mode: 'cors', redirect: 'manual'})
         const json = await res.json()
         this.sakes = json.sakes
         this.isBefore = json.isBefore
