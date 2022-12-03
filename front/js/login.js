@@ -20,7 +20,6 @@ new Vue({
               };
             const res = await fetch(
                 'http://localhost:8000/auth',
-                // `https://sake-api.herokuapp.com/auth`,
                 {
                     method: 'POST',
                     body: body,
