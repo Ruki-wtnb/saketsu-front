@@ -31,12 +31,8 @@ new Vue({
     },
     // TODO 重複した書き方になっているから、1つに統一したい
     async mounted(){
-        const res = await fetch('https://saketsu-app.azurewebsites.net/v1/sakes', 
-            {
-                mode: 'cors', 
-                redirect: 'manual'
-            }).then(result => result.text())
-        const json = await JSON.parse(res)
+        const res = await fetch("https://saketsu-back.azurewebsites.net/v1/sakes")
+        const json = await res.json()
         this.sakes = json.sakes
         this.isBefore = json.isBefore
         this.isNext = json.isNext,
@@ -60,7 +56,7 @@ new Vue({
                     delete params[p]
                 }
             }
-            const res = await fetch('https://saketsu-app.azurewebsites.net/v1/sakes')
+            const res = await fetch("https://saketsu-back.azurewebsites.net/v1/sakes")
             const json = await res.json()
             this.sakes = json.sakes
             this.isBefore = json.isBefore
@@ -73,3 +69,5 @@ new Vue({
         }
     }
 })
+
+
